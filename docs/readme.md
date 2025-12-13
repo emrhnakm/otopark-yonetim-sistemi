@@ -1,1 +1,1 @@
-rapor, UML, sunum
+Rapor, UML ve sunumu içerir.
