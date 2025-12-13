@@ -1,1 +1,1 @@
-src klasörü
+C++ kodlarını içerir.
