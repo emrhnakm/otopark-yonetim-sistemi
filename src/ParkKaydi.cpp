@@ -1,4 +1,5 @@
 #include "ParkKaydi.h"
+#include <iostream>
 
 // Girişte kayıt oluşturur.
 ParkKaydi::ParkKaydi(Arac* a, ParkYeri* p, int giris)
