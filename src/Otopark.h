@@ -39,7 +39,7 @@ public:
     void gunlukRaporGoster();
 
     // Kasayı buraya tanımladık
-    double toplamGelir = 0; 
+    double kasa = 0; 
 };
 
 #endif
