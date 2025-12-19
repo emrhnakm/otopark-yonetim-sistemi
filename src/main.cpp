@@ -14,6 +14,8 @@ int main() {
     cout << " OTOPARK YONETIM SISTEMI " << endl;
     cout << "1. Yeni Arac Girisi (Otomobil)" << endl;
     cout << "2. Plaka ile Arac Sorgula" << endl;
+    cout << "3. Arac Cikisi ve Ucret Hesabi" << endl;
+    cout << "4. Gunluk Rapor" << endl;
     cout << "0. Programı Kapat ve Kaydet" << endl;
     cout << "===================================" << endl;
 
@@ -45,8 +47,19 @@ int main() {
             } catch (const exception& e) {
                 cout << "HATA: " << e.what() << endl;
             }
-        }
+        } else if (secim == 3) {
+        string plaka;
+        int cSaati;
+        cout << "Cikis yapacak plaka: ";
+        cin >> plaka;
+        cout << "Cikis saati: ";
+        cin >> cSaati;
+        otopark.aracCikisiYap(plaka, cSaati);
+
+    } else if (secim == 4) {
+        otopark.gunlukRaporGoster();
     }
+    }        
 
     // Program kapanırken her şeyi dosyaya kaydeder
     if (otopark.VerileriDosyayaKaydet()) {
