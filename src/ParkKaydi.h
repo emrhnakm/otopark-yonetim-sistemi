@@ -1,8 +1,10 @@
 #ifndef PARKKAYDI_H
 #define PARKKAYDI_H
 
-#include "Arac.h"     
-#include "ParkYeri.h"  
+#include "Arac.h"
+#include "ParkYeri.h"
+#include <string>
+#include <ctime>
 
 class ParkKaydi {
 private:
@@ -20,13 +22,16 @@ public:
 
     // İşlemler
     void cikisYap(int cikis); // Çıkış saatini alır, ücreti hesaplar
-    
-    // Bilgi Getirme 
+
+    // Bilgi Getirme
     Arac* getArac() const;
     ParkYeri* getParkYeri() const;
     double getUcret() const;
     int getGirisSaati() const;
     int getCikisSaati() const;
+
+    std::string getPlaka() const { return arac->getPlaka(); }
+    std::string getAracTuru() const { return arac->getTur(); }
 };
 
 #endif
