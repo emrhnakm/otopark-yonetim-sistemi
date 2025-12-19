@@ -26,7 +26,7 @@ int main() {
             string plaka;
             cout << "Plaka girin: ";
             cin >> plaka;
-            
+
             // Yeni bir araç oluşturup otoparka ekliyoruz
             Arac* yeni = new Otomobil(plaka);
             ParkKaydi yeniKayit(yeni, nullptr, 8); // Saat 8'de girmiş gibi varsayalım
@@ -43,7 +43,7 @@ int main() {
                 otopark.plakaAra(plaka);
                 cout << "SONUC: Arac otoparkta bulunuyor." << endl;
             } catch (const exception& e) {
-                cout << "HATA: " << e.what() << endl; 
+                cout << "HATA: " << e.what() << endl;
             }
         }
     }
