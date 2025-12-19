@@ -15,6 +15,8 @@ private:
     vector<ParkYeri> parkYerleri;      // Otoparktaki park yerleri
 
 public:
+    bool VerileriDosyayaKaydet();
+    bool VerileriDosyadanYukle();
     // Park yeri ekleme
     void parkYeriEkle(const ParkYeri& p);
 
