@@ -32,14 +32,6 @@ public:
     // Toplam gelir
     double toplamGelir() const;
 
-    // Araç silme ve ücret
-    void aracCikisiYap(std::string plaka, int cikisSaati);
-
-    // Toplam gelir ve araç sayısı raporu
-    void gunlukRaporGoster();
-
-    // Kasayı buraya tanımladık
-    double kasa = 0; 
 };
 
 #endif
