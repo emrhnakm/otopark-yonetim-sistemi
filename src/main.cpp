@@ -18,25 +18,37 @@ int main() {
     cout << "4. Gunluk Rapor" << endl;
     cout << "0. Programı Kapat ve Kaydet" << endl;
     cout << "===================================" << endl;
-
+    
+    string plaka;
     int secim = -1;
     while (secim != 0) {
         cout << "\nSeciminiz: ";
         cin >> secim;
 
         if (secim == 1) {
-            string plaka;
-            cout << "Plaka girin: ";
+            cout << "Plaka giriniz: " << endl;
             cin >> plaka;
-
-            // Yeni bir araç oluşturup otoparka ekliyoruz
-            Arac* yeni = new Otomobil(plaka);
-            ParkKaydi yeniKayit(yeni, nullptr, 8); // Saat 8'de girmiş gibi varsayalım
-            otopark.aracEkle(yeniKayit);
+            
+            int turSecim;
+            cout <<"Aracın türünü giriniz: \n 1-Otomobil \n 2-Kamyonet " ; //Aracın türünü alıyoruz
+            cin >> turSecim;
+            
+            Arac* yeni = nullptr; // Araç türü için polimorfizm 
+            
+            // Türe göre yeni bir araç oluşturup otoparka ekliyoruz
+            if(turSecim == 1){
+                yeni = new Otomobil(plaka);
+                ParkKaydi yeniKayit(yeni, nullptr, 8); // Saat 8'de girmiş gibi varsayalım
+                otopark.aracEkle(yeniKayit);
+            } else if (turSecim == 2){
+                yeni = new Kamyonet(plaka);
+                ParkKaydi yeniKayit(yeni, nullptr, 8); // Saat 8'de girmiş gibi varsayalım
+                otopark.aracEkle(yeniKayit);
+            }    
+            
             cout << "Arac sisteme kaydedildi." << endl;
 
         } else if (secim == 2) {
-            string plaka;
             cout << "Aranacak Plaka: ";
             cin >> plaka;
 
@@ -48,7 +60,6 @@ int main() {
                 cout << "HATA: " << e.what() << endl;
             }
         } else if (secim == 3) {
-        string plaka;
         int cSaati;
         cout << "Cikis yapacak plaka: ";
         cin >> plaka;
