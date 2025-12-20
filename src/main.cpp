@@ -23,7 +23,12 @@ int main() {
     int secim = -1;
     while (secim != 0) {
         cout << "\nSeciminiz: ";
-        cin >> secim;
+        if (!(cin >> secim)) {
+            cin.clear(); // Hata bayrağını temizler
+            cin.ignore(1000, '\n'); // Hatalı girişi atlar
+            cout << "Gecersiz giris! Lutfen bir sayi giriniz." << endl;
+            continue;
+}
 
         if (secim == 1) {
             cout << "Plaka giriniz: " << endl;
