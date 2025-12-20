@@ -6,7 +6,7 @@
 class ParkYeri {
 private:
     int id;
-    std::string konum; // Örn: "Kat 1, A-5"
+    std::string konum;
     bool doluMu;
 
 public:
@@ -15,7 +15,6 @@ public:
     int getId() const;
     std::string getKonum() const;
     bool isDolu() const;
-
     void setDolu(bool durum);
 };
 
