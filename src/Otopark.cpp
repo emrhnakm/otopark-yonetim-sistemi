@@ -29,9 +29,13 @@ void Otopark::aracCikar(const std::string& plaka, int cikisSaati) {
     for (int i = 0; i < aktifKayitlar.size(); i++) {
         if (aktifKayitlar[i].getArac()->getPlaka() == plaka) {
             aktifKayitlar[i].cikisYap(cikisSaati);
-            
-            delete aktifKayitlar[i].getArac(); 
-            
+            // Çıkış yapıldıktan sonra ücreti göster ve toplam kazanca ekle
+            double ucret = aktifKayitlar[i].getUcret();
+            std::cout << "Arac cikisi yapildi. Ucret: " << ucret << " TL" << std::endl;
+            toplamKazanc += ucret;
+
+            // Arac nesnesini serbest bırak ve kaydı sil
+            delete aktifKayitlar[i].getArac();
             aktifKayitlar.erase(aktifKayitlar.begin() + i);
             break;
         }
@@ -40,8 +44,8 @@ void Otopark::aracCikar(const std::string& plaka, int cikisSaati) {
 
 // Toplam geliri hesaplar
 double Otopark::toplamGelir() const {
-    double toplam = 0.0;
-    for (int i = 0; i < aktifKayitlar.size(); i++) {
+    double toplam = toplamKazanc;
+    for (size_t i = 0; i < aktifKayitlar.size(); i++) {
         toplam += aktifKayitlar[i].getUcret();
     }
     return toplam;
