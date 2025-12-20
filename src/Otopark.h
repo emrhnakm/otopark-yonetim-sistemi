@@ -32,6 +32,9 @@ public:
     // Toplam gelir
     double toplamGelir() const;
 
+    //Günlük rapor 
+    void gunlukRaporGoster() const;
+
 };
 
 #endif
