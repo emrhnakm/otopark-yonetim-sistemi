@@ -10,14 +10,13 @@ private:
     bool doluMu;
 
 public:
-    ParkYeri(int _id, std::string _konum)
-        : id(_id), konum(_konum), doluMu(false) {}
+    ParkYeri(int _id, std::string _konum);
 
-    int getId() const { return id; }
-    std::string getKonum() const { return konum; }
-    bool isDolu() const { return doluMu; }
+    int getId() const;
+    std::string getKonum() const;
+    bool isDolu() const;
 
-    void setDolu(bool durum) { doluMu = durum; }
+    void setDolu(bool durum);
 };
 
 #endif
