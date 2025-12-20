@@ -36,7 +36,7 @@ int main() {
             Arac* yeni = nullptr; // Araç türü için polimorfizm 
             
             // Türe göre yeni bir araç oluşturup otoparka ekliyoruz
-            while(TRUE) {
+            while(true) {
             if(turSecim == 1) {
                 yeni = new Otomobil(plaka);
                 ParkKaydi yeniKayit(yeni, nullptr, 8); // Saat 8'de girmiş gibi varsayalım
@@ -72,7 +72,7 @@ int main() {
         cin >> plaka;
         cout << "Cikis saati: ";
         cin >> cSaati;
-        otopark.aracCikisiYap(plaka, cSaati);
+        otopark.aracCikar(plaka, cSaati);
 
     } else if (secim == 4) {
         otopark.gunlukRaporGoster();
