@@ -103,3 +103,9 @@ bool Otopark::VerileriDosyadanYukle() {
     dosya.close();
     return true;
 }
+void Otopark::gunlukRaporGoster() const {
+    std::cout << "\n--- OTOPARK GUNLUK RAPOR ---" << std::endl;
+    std::cout << "Icerideki Toplam Arac Sayisi: " << aktifKayitlar.size() << std::endl;
+    std::cout << "Otoparkın Mevcut Toplam Geliri: " << toplamGelir() << " TL" << std::endl;
+    std::cout << "----------------------------" << std::endl;
+}
