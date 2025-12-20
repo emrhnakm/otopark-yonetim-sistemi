@@ -13,6 +13,7 @@ class Otopark {
 private:
     vector<ParkKaydi> aktifKayitlar;   // Otoparktaki aktif araçlar
     vector<ParkYeri> parkYerleri;      // Otoparktaki park yerleri
+    double toplamKazanc = 0.0;         // Çıkışlarla biriken toplam gelir
 
 public:
     bool VerileriDosyayaKaydet();
