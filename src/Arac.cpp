@@ -1,6 +1,5 @@
 #include "Arac.h"
 
-
 //Temel sınıf
 Arac::Arac(const std::string& plaka) : plaka(plaka){}
 Arac::~Arac() {}
