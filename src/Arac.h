@@ -7,34 +7,33 @@
 class Arac {
 protected:
     std::string plaka;
-    std::string tur;
 public:
-    Arac(std::string p, std::string t) : plaka(p), tur(t) {}
-    virtual ~Arac() {}
+    Arac(const std::string& plaka);
+    virtual ~Arac();
 
-    std::string getPlaka() const { return plaka; }
-    std::string getTur() const { return tur; }
+    std::string getPlaka() const;
 
-    // Polimorfizm için ücret hesaplama fonksiyonu
-    virtual double hesaplaUcret(int sure) = 0;
+    // Polimorfizm kullanılan fonksiyonlar
+    virtual double hesaplaUcret(int sure) const = 0;
+    virtual std::string getTur() const = 0; // = 0 ile temel sınıftan nesne oluşumu engellenir
 };
 
-// Otomobil Sınıfı
+//Türemiş sınıf(Otomobil)
 class Otomobil : public Arac {
-public:
-    Otomobil(std::string p) : Arac(p, "Otomobil") {}
-    double hesaplaUcret(int sure) override {
-        return sure * 10.0; // Otomobil saatlik 10 TL
-    }
+    public:
+        Otomobil(const std::string& plaka);
+        
+        double hesaplaUcret(int sure) const override;
+        std::string getTur() const override;
 };
 
-// Kamyonet Sınıfı
+//Türemiş sınıf (Kamyonet)
 class Kamyonet : public Arac {
-public:
-    Kamyonet(std::string p) : Arac(p, "Kamyonet") {}
-    double hesaplaUcret(int sure) override {
-        return sure * 15.0; // Kamyonet saatlik 15 TL
-    }
+    public:
+        Kamyonet(const std::string& plaka);
+        
+        double hesaplaUcret(int sure) const override;
+        std::string getTur() const override;
 };
 
 #endif
