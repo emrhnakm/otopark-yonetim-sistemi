@@ -29,6 +29,9 @@ void Otopark::aracCikar(const std::string& plaka, int cikisSaati) {
     for (int i = 0; i < aktifKayitlar.size(); i++) {
         if (aktifKayitlar[i].getArac()->getPlaka() == plaka) {
             aktifKayitlar[i].cikisYap(cikisSaati);
+            
+            delete aktifKayitlar[i].getArac(); 
+            
             aktifKayitlar.erase(aktifKayitlar.begin() + i);
             break;
         }
