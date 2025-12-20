@@ -11,7 +11,7 @@ public:
     Arac(const std::string& plaka);
     virtual ~Arac();
 
-    std::string getPlaka() const;
+    const std::string& getPlaka() const;
 
     // Polimorfizm kullanılan fonksiyonlar
     virtual double hesaplaUcret(int sure) const = 0;
