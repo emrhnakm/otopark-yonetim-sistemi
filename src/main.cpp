@@ -30,23 +30,30 @@ int main() {
             cin >> plaka;
             
             int turSecim;
-            cout <<"Aracın türünü giriniz: \n 1-Otomobil \n 2-Kamyonet " ; //Aracın türünü alıyoruz
+            cout <<"Aracın türünü giriniz: \n 1-Otomobil \n 2-Kamyonet \n 0- Menüye Dön " << endl; //Aracın türünü alıyoruz
             cin >> turSecim;
             
             Arac* yeni = nullptr; // Araç türü için polimorfizm 
             
             // Türe göre yeni bir araç oluşturup otoparka ekliyoruz
-            if(turSecim == 1){
+            while(TRUE) {
+            if(turSecim == 1) {
                 yeni = new Otomobil(plaka);
                 ParkKaydi yeniKayit(yeni, nullptr, 8); // Saat 8'de girmiş gibi varsayalım
                 otopark.aracEkle(yeniKayit);
-            } else if (turSecim == 2){
+                cout << "Arac sisteme kaydedildi." << endl;
+                break;
+            } else if (turSecim == 2) {
                 yeni = new Kamyonet(plaka);
-                ParkKaydi yeniKayit(yeni, nullptr, 8); // Saat 8'de girmiş gibi varsayalım
+                ParkKaydi yeniKayit(yeni, nullptr, 8);
                 otopark.aracEkle(yeniKayit);
-            }    
-            
-            cout << "Arac sisteme kaydedildi." << endl;
+                cout << "Arac sisteme kaydedildi." << endl;
+                break;
+            } else {
+                cout << "Geçerli bir numara giriniz." << endl;
+                break;
+            }
+            }
 
         } else if (secim == 2) {
             cout << "Aranacak Plaka: ";
