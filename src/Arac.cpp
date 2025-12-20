@@ -4,7 +4,7 @@
 Arac::Arac(const std::string& plaka) : plaka(plaka){}
 Arac::~Arac() {}
 
-std::string Arac::getPlaka() const {
+const std::string& Arac::getPlaka() const {
     return plaka;
 }
 
